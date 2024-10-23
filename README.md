@@ -10,20 +10,19 @@ I hope you enjoy playing the game, I had fun creating it.
 
 image of the game intro screen will be here as png
 
-## TOC
+# Table of contents
 
 - [Adventure Game](#adventure-game)
-  - [TOC](#toc)
-  - [Description](#description)
-  - [How to play](#how-to-play)
-  - [How to run](#how-to-run)
-  - [How to build](#how-to-build)
-  - [Documentation](#documentation)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Code of Conduct](#code-of-conduct)
-  - [Acknowledgments](#acknowledgments)
-  - [Authors](#authors)
+- [Description](#description)
+- [How to play](#how-to-play)
+- [How to run](#how-to-run)
+- [How to build](#how-to-build)
+- [Documentation](#documentation)
+- [License](#license)
+- [Contributing](#contributing)
+- [Code of Conduct](#code-of-conduct)
+- [Acknowledgments](#acknowledgments)
+- [Authors](#authors)
 
 ## Description
 
@@ -54,11 +53,11 @@ to do on your own.
 ## How to run
 
 To run the game, install one of the pre-built binaries from the
-[releases]() page. Then run the binary from the command line.
-The bineries are generated automatically by the CI/CD pipeline
-that I have set up for this project. The binaries are built
-for Windows, MacOS, and Linux while supporting x86, x64 , arm, and
-arm64 architectures. 
+[releases](https://github.com/pavel-hrdina/AdventureGame/releases) page. 
+Then run the binary from the command line. The bineries are generated 
+automatically by the CI/CD pipeline that I have set up for this project. 
+the binaries are built for Windows, MacOS, and Linux while supporting x86, 
+x64 , arm, and arm64 architectures. 
 
 ## How to build
 
