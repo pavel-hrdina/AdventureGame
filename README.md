@@ -3,7 +3,8 @@
 A learning project to create a text-based adventure game.
 I hope you enjoy playing the game, I had fun creating it.
 
-[![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](./docs/CODE_OF_CONDUCT)
+[![Contributing](https://img.shields.io/badge/Contributing-Guide-4baaaa.svg)](CONTRIBUTING.md)
 [![Build Status](https://travis-ci.com/robert-30/AdventureGame.svg?branch=main)](https://travis-ci.com/robert-30/AdventureGame)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
