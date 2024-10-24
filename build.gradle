@@ -5,14 +5,76 @@ plugins {
 
 version = '1.0-SNAPSHOT'
 
+// Define target platform
+ext {
+    targetPlatform = project.hasProperty('targetPlatform') ? project.findProperty('targetPlatform') : 'linux-amd64'
+}
+
 graalvmNative {
     toolchainDetection = true
     binaries {
         main {
-            mainClass = 'org.hello.Main'
+            imageName = 'AdventureGame'
+
+            mainClass = 'org.game.Main'
+            debug = false // Set to true for debugging info
+            verbose = false // Set to true for verbose output
+            fallback = false // Whether to generate fallback code
+
+            targetPlatform = project.ext.targetPlatform
+
+            // Add platform-specific build arguments
+            buildArgs.addAll(getPlatformSpecificBuildArgs(targetPlatform))
+
+            // Common build arguments for all platforms
+            buildArgs.addAll([
+                    '--no-fallback',
+                    '-H:+ReportExceptionStackTraces'
+            ])
+
         }
     }
 }
+
+// Function to return platform-specific build arguments
+static def getPlatformSpecificBuildArgs(platform) {
+    switch (platform) {
+        case 'windows-amd64':
+            return ['-H:+StaticExecutableWithDynamicLibC', '--target=windows-amd64']
+        case 'linux-amd64':
+            return ['--target=linux-amd64']
+        case 'darwin-amd64':
+            return ['--target=darwin-amd64']
+        case 'darwin-aarch64':
+            return ['--target=darwin-aarch64']
+        default:
+            throw new IllegalArgumentException("Unsupported platform: $platform")
+    }
+}
+
+// Custom tasks for each platform
+tasks.register('buildAll') {
+    dependsOn tasks.named('nativeCompile')
+    doLast {
+        println "Built native image for ${project.ext.targetPlatform}"
+    }
+}
+
+// Function to create platform-specific build tasks
+def createBuildTask(String name, String platform) {
+    tasks.register(name) {
+        doFirst {
+            project.ext.targetPlatform = platform
+        }
+        finalizedBy tasks.named('buildAll')
+    }
+}
+
+// Creating tasks for each target platform
+createBuildTask('buildWindows', 'windows-amd64')
+createBuildTask('buildLinux', 'linux-amd64')
+createBuildTask('buildMacIntel', 'darwin-amd64')
+createBuildTask('buildMacM1', 'darwin-aarch64')
 
 repositories {
     mavenCentral()
