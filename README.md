@@ -53,9 +53,9 @@ to do on your own.
 
 To run the game, install one of the pre-built binaries from the
 [releases](https://github.com/pavel-hrdina/AdventureGame/releases) page. 
-Then run the binary from the command line. The bineries are generated 
+Then run the binary from the command line. The binaries are generated 
 automatically by the CI/CD pipeline that I have set up for this project. 
-the binaries are built for Windows, MacOS, and Linux while supporting x86, 
+the binaries are built for Windows, macOS, and Linux while supporting x86, 
 x64 , arm, and arm64 architectures. 
 
 ## How to build
