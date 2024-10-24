@@ -90,7 +90,7 @@ gradle nativeCompile
 ## Documentation
 
 The game is documented using JavaDoc. The code is also commented. You can
-Find the JavaDoc in the `docs` folder. I will also be including diagrams. 
+find the JavaDoc in the `docs` folder. I will also be including diagrams. 
 Brainstorming, flowcharts, and pseudocode that I made while creating the game, 
 to serve as documentation.
 
@@ -126,4 +126,4 @@ modelíng and design, and testing. I used the ideas in this tutorial to create t
 
 ## Authors
 
-- Pavel Hrdina - [pavel-hrdina](https://github.com/pavel-hrdina
+- Pavel Hrdina - [pavel-hrdina](https://github.com/pavel-hrdina)
