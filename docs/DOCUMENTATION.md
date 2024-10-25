@@ -4,6 +4,46 @@ This is the documentation for the project. It contains models.
 Story details and other information about the project, like 
 the game controls and available options and outcomes.
 
+# Table of Contents
+
+Most of the links are not working, they are placeholders for now
+as I will add documentation for the project, they will become
+relevant.
+
+## Working links or in progress
+
+- [Project Progress](#project-progress)
+- [Diagrams](#diagrams)
+  - [Activity Diagram](#activity-diagram)
+  - [Class Diagram](#class-diagram)
+  - [State Diagram](#state-diagram)
+  - [Component Diagram](#component-diagram)
+  - [Deployment Diagram](#deployment-diagram)
+  - [Flowchart Diagram](#flowchart-diagram)
+
+## Inactive links
+
+- [CI/CD Pipeline](#ci-cd-pipeline)
+- [Ideas](#ideas)
+- [Story](#story)
+    - [Outcomes](#outcomes)
+    - [Endings](#endings)
+    - [Characters](#characters)
+    - [Locations](#locations)
+- [Game Design](#game-design)
+  - [Map](#map)
+- [Game Mechanics](#game-mechanics)
+  - [Controls](#controls)
+  - [Options](#options)
+  - [Items](#items)
+  - [Entities](#entities)
+  - [Actions](#actions)
+  - [Combat](#combat)
+  - [Inventory](#inventory)
+- [Map](#map)
+- [Entities](#entities)
+- [Items](#items)
+
 ## Project Progress
 
 A table with project progress measured as tasks.
