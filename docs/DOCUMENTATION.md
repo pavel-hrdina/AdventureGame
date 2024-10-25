@@ -23,7 +23,8 @@ relevant.
 
 ## Inactive links
 
-- [CI/CD Pipeline](#ci-cd-pipeline)
+- [CI/CD Pipeline](#ci-cd-pipeline)a
+- [Testing](#testing)
 - [Ideas](#ideas)
 - [Story](#story)
     - [Outcomes](#outcomes)

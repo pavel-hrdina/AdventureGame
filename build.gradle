@@ -52,13 +52,6 @@ static def getPlatformSpecificBuildArgs(platform) {
     }
 }
 
-// Custom tasks for each platform
-tasks.register('buildAll') {
-    dependsOn tasks.named('nativeCompile')
-    doLast {
-        println "Built native image for ${project.ext.targetPlatform}"
-    }
-}
 
 // Function to create platform-specific build tasks
 def createBuildTask(String name, String platform) {
@@ -70,11 +63,35 @@ def createBuildTask(String name, String platform) {
     }
 }
 
+// Custom tasks for each platform
+tasks.register('buildAll') {
+    dependsOn tasks.named('nativeCompile')
+    doLast {
+        println "Built native image for ${project.ext.targetPlatform}"
+    }
+}
+
 // Creating tasks for each target platform
 createBuildTask('buildWindows', 'windows-amd64')
 createBuildTask('buildLinux', 'linux-amd64')
 createBuildTask('buildMacIntel', 'darwin-amd64')
 createBuildTask('buildMacM1', 'darwin-aarch64')
+
+// test task
+tasks.named('test', Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+
+    useJUnitPlatform()
+
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+
+    maxHeapSize = '1g'
+
+    failFast = true
+}
 
 repositories {
     mavenCentral()
@@ -83,8 +100,4 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-}
-
-test {
-    useJUnitPlatform()
 }
