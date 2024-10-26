@@ -26,37 +26,36 @@ image of the game intro screen will be here as png
 ## Description
 
 This is a text-based adventure game implemented in Java.
-When ever I am learning a new programming 
+When ever I am learning a new programming
 language, I like to implement a text-based adventure game.
 
-
-It is a fun way to learn the basics of the language. 
+It is a fun way to learn the basics of the language.
 I like to use object-oriented programming to implement the game.
 But I also like to keep it simple and not over-engineer it.
 
 ## How to play
 
-The game is a text-based adventure game. You play as a human 
+The game is a text-based adventure game. You play as a human
 explorer. You are exploring a dungeon with the goal of
-finding the treasure and then escaping the dungeon. In the 
-dungeon you will encounter monsters and traps that you must 
+finding the treasure and then escaping the dungeon. In the
+dungeon you will encounter monsters and traps that you must
 overcome.
 
 You will also find items that will help you in your
 quest. You will need to make choices on which way to go and
 what to do. I hope you enjoy playing the game. There are no
-graphics, just text. Use your imagination, there is no 
+graphics, just text. Use your imagination, there is no
 hand-holding in this game. You will need to figure out what
 to do on your own.
 
 ## How to run
 
 To run the game, install one of the pre-built binaries from the
-[releases](https://github.com/pavel-hrdina/AdventureGame/releases) page. 
-Then run the binary from the command line. The binaries are generated 
-automatically by the CI/CD pipeline that I have set up for this project. 
-the binaries are built for Windows, macOS, and Linux while supporting x86, 
-x64 , arm, and arm64 architectures. 
+[releases](https://github.com/pavel-hrdina/AdventureGame/releases) page.
+Then run the binary from the command line. The binaries are generated
+automatically by the CI/CD pipeline that I have set up for this project.
+the binaries are built for Windows, macOS, and Linux while supporting x86,
+x64 , arm, and arm64 architectures.
 
 ## How to build
 
@@ -90,8 +89,8 @@ gradle nativeCompile
 ## Documentation
 
 The game is documented using JavaDoc. The code is also commented. You can
-find the JavaDoc in the `docs` folder. I will also be including diagrams. 
-Brainstorming, flowcharts, and pseudocode that I made while creating the game, 
+find the JavaDoc in the `docs` folder. I will also be including diagrams.
+Brainstorming, flowcharts, and pseudocode that I made while creating the game,
 to serve as documentation.
 
 ## License
@@ -100,7 +99,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on 
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on
 our code of conduct, and the process for submitting pull requests to me.
 
 ## Code of Conduct
@@ -115,7 +114,7 @@ A great read on text-based adventure games, the history and how they work.
 
 - [The Startup Guide to Storytelling: Learn from Text-Based Adventure Games!](https://www.taskade.com/blog/text-based-storytelling-games-startup-business/)
 
-An interesting article on how text-based adventure games can be used to tell stories. 
+An interesting article on how text-based adventure games can be used to tell stories.
 I used some of the ideas in this article to create the story for the game.
 
 - [Text-Adventure-Tutorial - GitHub](https://github.com/Kyle-L/Text-Adventure-Tutorial)
