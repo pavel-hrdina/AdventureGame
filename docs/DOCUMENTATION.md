@@ -76,170 +76,185 @@ The quit will force the game to end and the application to close.
 
 **Core Classes**
 
-* `Game` - *Main controller managing game flow*
-* `Entity` - *Base class for all living beings*
-* `Player` - *Specialized entity controlled by user*
-* `Item` - *Interactive objects in the game world*
-* `Location` - *Areas in the game world*
-* `Story` - *Manages narrative and progression*
-* `Action` - *Possible activities in game*
-* `GameState` - *Tracks game progress and state*
+- `Game` - _Main controller managing game flow_
+- `Entity` - _Base class for all living beings_
+- `Player` - _Specialized entity controlled by user_
+- `Item` - _Interactive objects in the game world_
+- `Location` - _Areas in the game world_
+- `Story` - _Manages narrative and progression_
+- `Action` - _Possible activities in game_
+- `GameState` - _Tracks game progress and state_
 
 **Attributes by Class**
 
-* `Game`
-    * *player*: Main player entity
-    * *story*: Current story
-    * *currentState*: Active game state
-    * *isRunning*: Game activity status
+- `Game`
 
-* `Entity`
-    * *name*: Entity identifier
-    * *health*: Current health points
-    * *maxHealth*: Maximum possible health
-    * *currentLocation*: Current position
-    * *isActive*: Activity status
+    - _player_: Main player entity
+    - _story_: Current story
+    - _currentState_: Active game state
+    - _isRunning_: Game activity status
 
-* `Player` (extends Entity)
-    * *inventory*: Carried items
-    * *maxInventorySize*: Inventory capacity limit
-    * *(inherits Entity attributes)*
+- `Entity`
 
-* `Item`
-    * *name*: Item identifier
-    * *description*: Item details
-    * *type*: ItemType value
-    * *isCollectable*: Pickup status
-    * *isUsable*: Usage status
-    * *currentLocation*: Item position
+    - _name_: Entity identifier
+    - _health_: Current health points
+    - _maxHealth_: Maximum possible health
+    - _currentLocation_: Current position
+    - _isActive_: Activity status
 
-* `Location`
-    * *name*: Location identifier
-    * *description*: Location details
-    * *entities*: Present entities
-    * *items*: Present items
-    * *connectedLocations*: Linked locations
-    * *isLocked*: Access status
-    * *requiredKey*: Key item for unlocking
+- `Player` (extends Entity)
 
-* `Story`
-    * *title*: Story name
-    * *introduction*: Opening narrative
-    * *storyParts*: Story segments
-    * *locations*: Available areas
-    * *entities*: Present entities
-    * *items*: Available items
-    * *dialogues*: Conversation map
-    * *availableActions*: Possible actions
-    * *endings*: Possible conclusions
-    * *currentPartIndex*: Story progress
+    - _inventory_: Carried items
+    - _maxInventorySize_: Inventory capacity limit
+    - _(inherits Entity attributes)_
 
-* `Action`
-    * *name*: Action identifier
-    * *description*: Action details
-    * *type*: ActionType value
-    * *outcome*: Result description
-    * *requirements*: Required conditions
-    * *source*: Acting entity
-    * *target*: Target entity
-    * *itemUsed*: Required item
+- `Item`
 
-* `GameState`
-    * *name*: State identifier
-    * *description*: State description
-    * *availableActions*: Current actions
-    * *currentPart*: Active story segment
-    * *flags*: State condition map
+    - _name_: Item identifier
+    - _description_: Item details
+    - _type_: ItemType value
+    - _isCollectable_: Pickup status
+    - _isUsable_: Usage status
+    - _currentLocation_: Item position
+
+- `Location`
+
+    - _name_: Location identifier
+    - _description_: Location details
+    - _entities_: Present entities
+    - _items_: Present items
+    - _connectedLocations_: Linked locations
+    - _isLocked_: Access status
+    - _requiredKey_: Key item for unlocking
+
+- `Story`
+
+    - _title_: Story name
+    - _introduction_: Opening narrative
+    - _storyParts_: Story segments
+    - _locations_: Available areas
+    - _entities_: Present entities
+    - _items_: Available items
+    - _dialogues_: Conversation map
+    - _availableActions_: Possible actions
+    - _endings_: Possible conclusions
+    - _currentPartIndex_: Story progress
+
+- `Action`
+
+    - _name_: Action identifier
+    - _description_: Action details
+    - _type_: ActionType value
+    - _outcome_: Result description
+    - _requirements_: Required conditions
+    - _source_: Acting entity
+    - _target_: Target entity
+    - _itemUsed_: Required item
+
+- `GameState`
+    - _name_: State identifier
+    - _description_: State description
+    - _availableActions_: Current actions
+    - _currentPart_: Active story segment
+    - _flags_: State condition map
 
 **Enumerations**
 
-* `ItemType`
-    * *KEY*: For unlocking
-    * *WEAPON*: For combat
-    * *CONSUMABLE*: Single-use
-    * *QUEST_ITEM*: Story-related
+- `ItemType`
 
-* `ActionType`
-    * *MOVEMENT*: Location changes
-    * *INTERACTION*: Entity/object interaction
-    * *USE_ITEM*: Item usage
-    * *DIALOGUE*: Conversations
-    * *COMBAT*: Fighting actions
+    - _KEY_: For unlocking
+    - _WEAPON_: For combat
+    - _CONSUMABLE_: Single-use
+    - _QUEST_ITEM_: Story-related
+
+- `ActionType`
+    - _MOVEMENT_: Location changes
+    - _INTERACTION_: Entity/object interaction
+    - _USE_ITEM_: Item usage
+    - _DIALOGUE_: Conversations
+    - _COMBAT_: Fighting actions
 
 **Key Methods by Class**
 
-* `Game`
-    * *initializeGame()*: Start setup
-    * *processAction()*: Handle actions
-    * *updateGameState()*: Update state
-    * *endGame()*: Conclude game
+- `Game`
 
-* `Entity`
-    * *move()*: Change location
-    * *interact()*: Entity interaction
-    * *getStatus()*: Status check
-    * *takeDamage()*: Process damage
-    * *heal()*: Recover health
-    * *setLocation()*: Update position
+    - _initializeGame()_: Start setup
+    - _processAction()_: Handle actions
+    - _updateGameState()_: Update state
+    - _endGame()_: Conclude game
 
-* `Player`
-    * *addItem()*: Add to inventory
-    * *removeItem()*: Remove from inventory
-    * *useItem()*: Use item
-    * *getInventoryStatus()*: Check inventory
-    * *canCarryItem()*: Check capacity
+- `Entity`
 
-* `Item`
-    * *use()*: Use item
-    * *examine()*: Get details
-    * *getInfo()*: Basic info
-    * *setLocation()*: Update position
-    * *onCollect()*: Collection behavior
-    * *onUse()*: Usage behavior
+    - _move()_: Change location
+    - _interact()_: Entity interaction
+    - _getStatus()_: Status check
+    - _takeDamage()_: Process damage
+    - _heal()_: Recover health
+    - _setLocation()_: Update position
 
-* `Location`
-    * *addEntity()*: Add entity
-    * *removeEntity()*: Remove entity
-    * *addItem()*: Add item
-    * *removeItem()*: Remove item
-    * *getAvailableItems()*: List items
-    * *getConnectedLocations()*: List connections
-    * *canEnter()*: Check access
-    * *unlock()*: Process unlocking
+- `Player`
 
-* `Story`
-    * *progressStory()*: Advance story
-    * *getCurrentPart()*: Current segment
-    * *getAvailableActions()*: List actions
-    * *addStoryPart()*: Add segment
-    * *checkTriggers()*: Check conditions
-    * *getEnding()*: Get conclusion
+    - _addItem()_: Add to inventory
+    - _removeItem()_: Remove from inventory
+    - _useItem()_: Use item
+    - _getInventoryStatus()_: Check inventory
+    - _canCarryItem()_: Check capacity
 
-* `Action`
-    * *execute()*: Perform action
-    * *checkRequirements()*: Validate conditions
-    * *getDescription()*: Action details
-    * *isAvailable()*: Check availability
+- `Item`
 
-* `GameState`
-    * *updateState()*: Update state
-    * *getAvailableActions()*: List actions
-    * *getCurrentStatus()*: Get status
-    * *setFlag()*: Set condition
-    * *checkFlag()*: Check condition
+    - _use()_: Use item
+    - _examine()_: Get details
+    - _getInfo()_: Basic info
+    - _setLocation()_: Update position
+    - _onCollect()_: Collection behavior
+    - _onUse()_: Usage behavior
+
+- `Location`
+
+    - _addEntity()_: Add entity
+    - _removeEntity()_: Remove entity
+    - _addItem()_: Add item
+    - _removeItem()_: Remove item
+    - _getAvailableItems()_: List items
+    - _getConnectedLocations()_: List connections
+    - _canEnter()_: Check access
+    - _unlock()_: Process unlocking
+
+- `Story`
+
+    - _progressStory()_: Advance story
+    - _getCurrentPart()_: Current segment
+    - _getAvailableActions()_: List actions
+    - _addStoryPart()_: Add segment
+    - _checkTriggers()_: Check conditions
+    - _getEnding()_: Get conclusion
+
+- `Action`
+
+    - _execute()_: Perform action
+    - _checkRequirements()_: Validate conditions
+    - _getDescription()_: Action details
+    - _isAvailable()_: Check availability
+
+- `GameState`
+    - _updateState()_: Update state
+    - _getAvailableActions()_: List actions
+    - _getCurrentStatus()_: Get status
+    - _setFlag()_: Set condition
+    - _checkFlag()_: Check condition
 
 **Key Relationships**
 
-* Game contains one Player, Story, and GameState
-* Player extends Entity
-* Location contains multiple Entities and Items
-* Locations connect to other Locations
-* Story contains multiple Locations and Actions
-* GameState tracks multiple Actions
-* Items have one ItemType
-* Actions have one ActionType
-* Player carries multiple Items
-* Entities and Items are in one Location
+- Game contains one Player, Story, and GameState
+- Player extends Entity
+- Location contains multiple Entities and Items
+- Locations connect to other Locations
+- Story contains multiple Locations and Actions
+- GameState tracks multiple Actions
+- Items have one ItemType
+- Actions have one ActionType
+- Player carries multiple Items
+- Entities and Items are in one Location
 
 ![Class Diagram](./assets/classDiagram.svg)
 
@@ -301,24 +316,23 @@ a rickety wooden bench and a pile of old bones in the corner.
 ### Expanded Player Commands:
 
 - **...EXAMINE...**
-  *The door is locked tight, but you notice a small keyhole. The hinges are
+  _The door is locked tight, but you notice a small keyhole. The hinges are
   rusted, and a faint light seeps through the
-  cracks around the door.*
+  cracks around the door._
 
-- **...LOOK...*
-  *You notice a loose stone in the wall that could be moved.
+- \*_...LOOK..._
+  _You notice a loose stone in the wall that could be moved.
   It might hide something. The bench is unstable, but it looks
-  like it could be used to reach higher areas if necessary.*
+  like it could be used to reach higher areas if necessary._
 
 - **...LISTEN TO...**
-  *You press your ear against the cold stone wall. In the distance, you hear the clanking
+  _You press your ear against the cold stone wall. In the distance, you hear the clanking
   of chains and soft murmurs. They seem to be coming from somewhere deeper within the
-  dungeon, mixed with the faint sound of water dripping.*
+  dungeon, mixed with the faint sound of water dripping._
 
-
-- ****
-  *You push against the door, but it doesn’t budge. A loud clang echoes, startling you.
-  It seems the dungeon is more alive than you thought.*
+- ***
+  _You push against the door, but it doesn’t budge. A loud clang echoes, startling you.
+  It seems the dungeon is more alive than you thought._
 
 Will add more options when the mechanics are designed.
 
@@ -338,31 +352,30 @@ are covered in ancient symbols that glow faintly, revealing a path forward.
 4. **South:** The corridor ends in a dead end, but you notice a small alcove
    with a flickering torch and a pile of bones.
 
-**What would you like to do?**
----
+## **What would you like to do?**
 
 ### Quest Progression:
 
 As you navigate the dungeon, you’ll encounter various characters, obstacles, and enemies:
 
 - **Fellow Prisoners:**
-  *You stumble upon a fellow prisoner named Arin. He’s been trapped here for
+  _You stumble upon a fellow prisoner named Arin. He’s been trapped here for
   days and is desperate for escape. He offers to share what he knows about the
-  dungeon in exchange for your help.*
+  dungeon in exchange for your help._
 
 - **Enemies:**
-  *As you explore, you come across a **Shadow Wraith**, a dark figure that drifts
+  _As you explore, you come across a **Shadow Wraith**, a dark figure that drifts
   silently through the corridor. Its hollow eyes seem to peer into your very soul, and
   it blocks your path with an air of menace. To pass, you must either find a way to defeat
-  it or evade its gaze.*
+  it or evade its gaze._
 
 - **Ancient Relics:**
-  *You find a dusty tome on a ledge, filled with notes on the dungeon’s history.
-  It hints at a hidden treasure and a way to bypass traps using specific incantations.*
+  _You find a dusty tome on a ledge, filled with notes on the dungeon’s history.
+  It hints at a hidden treasure and a way to bypass traps using specific incantations._
 
 - **Finding the Key:**
-  *Deep within the dungeon, you learn from Arin that a **Dungeon Keeper** holds the key to the exit. The Keeper is a
-  fierce creature that prowls the depths, and you will need to either confront it or find another way to get the key.*
+  _Deep within the dungeon, you learn from Arin that a **Dungeon Keeper** holds the key to the exit. The Keeper is a
+  fierce creature that prowls the depths, and you will need to either confront it or find another way to get the key._
 
 ---
 
@@ -371,6 +384,7 @@ As you navigate the dungeon, you’ll encounter various characters, obstacles, a
 1. **Encountering the Shadow Wraith:**
 
 - **Combat Option:** You can choose to fight the Wraith using a makeshift weapon found in the corridor.
+
     - If you succeed, the Wraith dissipates into shadows, leaving behind a small **Key Fragment** that could be
       important later.
     - If you fail, the Wraith drains your energy, forcing you to retreat back into the cell.
