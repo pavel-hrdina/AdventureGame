@@ -281,7 +281,10 @@ secrets, and lurking dangers.
 
 You awaken in a damp stone cell, the air heavy with the scent of moss and decay.
 The faint glow of torchlight flickers in the distance, casting long shadows on the
-cold stone walls. You have no memory of how you got here, but you know one thing: you must escape.
+cold stone walls. You have no memory of how you got here, but you know one
+thing: you have come for something, yet you fail to remember, what happened? What brought you here?
+The answers are lost in the darkness of your mind.
+
 Whispers echo through the halls, warning of dangers and treasures hidden within the dungeon's depths.
 
 ---
@@ -312,9 +315,12 @@ a rickety wooden bench and a pile of old bones in the corner.
   of chains and soft murmurs. They seem to be coming from somewhere deeper within the
   dungeon, mixed with the faint sound of water dripping.*
 
+
 - ****
   *You push against the door, but it doesn’t budge. A loud clang echoes, startling you.
   It seems the dungeon is more alive than you thought.*
+
+Will add more options when the mechanics are designed.
 
 ---
 
@@ -333,7 +339,6 @@ are covered in ancient symbols that glow faintly, revealing a path forward.
    with a flickering torch and a pile of bones.
 
 **What would you like to do?**
-
 ---
 
 ### Quest Progression:
@@ -341,17 +346,19 @@ are covered in ancient symbols that glow faintly, revealing a path forward.
 As you navigate the dungeon, you’ll encounter various characters, obstacles, and enemies:
 
 - **Fellow Prisoners:**
-  *You stumble upon a fellow prisoner named Arin. He’s been trapped here for days and is desperate for escape. He offers
-  to share what he knows about the dungeon in exchange for your help.*
+  *You stumble upon a fellow prisoner named Arin. He’s been trapped here for
+  days and is desperate for escape. He offers to share what he knows about the
+  dungeon in exchange for your help.*
 
 - **Enemies:**
-  *As you explore, you come across a **Shadow Wraith**, a dark figure that drifts silently through the corridor. Its
-  hollow eyes seem to peer into your very soul, and it blocks your path with an air of menace. To pass, you must either
-  find a way to defeat it or evade its gaze.*
+  *As you explore, you come across a **Shadow Wraith**, a dark figure that drifts
+  silently through the corridor. Its hollow eyes seem to peer into your very soul, and
+  it blocks your path with an air of menace. To pass, you must either find a way to defeat
+  it or evade its gaze.*
 
 - **Ancient Relics:**
-  *You find a dusty tome on a ledge, filled with notes on the dungeon’s history. It hints at a hidden treasure and a way
-  to bypass traps using specific incantations.*
+  *You find a dusty tome on a ledge, filled with notes on the dungeon’s history.
+  It hints at a hidden treasure and a way to bypass traps using specific incantations.*
 
 - **Finding the Key:**
   *Deep within the dungeon, you learn from Arin that a **Dungeon Keeper** holds the key to the exit. The Keeper is a
@@ -378,6 +385,10 @@ As you navigate the dungeon, you’ll encounter various characters, obstacles, a
 - **Combat Option:** If you choose to fight, you can use the knowledge from the tome to exploit its weaknesses.
 - **Negotiation Option:** Alternatively, you can attempt to negotiate with it. Perhaps it values something more than
   just a fight—like a promise of freedom or a trade for an item.
+
+Every encounter will have consequences, shaping the story and your character’s journey. If
+you fail to defeat an enemy, you may lose health or be forced to retreat, altering your path
+through the dungeon, you may even lose the game.
 
 ---
 
