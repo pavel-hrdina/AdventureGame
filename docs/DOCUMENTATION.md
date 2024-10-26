@@ -15,10 +15,8 @@ relevant.
 - [Project Progress](#project-progress)
 - [Diagrams](#diagrams)
   - [Activity Diagram](#activity-diagram)
-  - [Class Diagram](#class-diagram)
   - [State Diagram](#state-diagram)
-  - [Component Diagram](#component-diagram)
-  - [Deployment Diagram](#deployment-diagram)
+  - [Class Diagram](#class-diagram)
   - [Flowchart Diagram](#flowchart-diagram)
 
 ## Inactive links
@@ -55,16 +53,6 @@ A table with project progress measured as tasks.
 
 ## Diagrams
 
-Diagrams for the project are:
-
-- [Activity Diagram](#activity-diagram)
-- [Class Diagram]()
-- [State Diagram](#state-diagram)
-- [Component Diagram]()
-- [Deployment Diagram]()
-- [Flowchart Diagram](#flowchart-diagram)
-
-
 ### Activity Diagram
 
 ![Activity Diagram](./assets/activityDiagram.svg)
@@ -79,6 +67,183 @@ actions: go somewhere, go back. The inventory state has the following actions: l
 The quit will force the game to end and the application to close.
 
 ![State diagram](./assets/stateDiagram.svg)
+
+### Class Diagram
+
+**Core Classes**
+* `Game` - *Main controller managing game flow*
+* `Entity` - *Base class for all living beings*
+* `Player` - *Specialized entity controlled by user*
+* `Item` - *Interactive objects in the game world*
+* `Location` - *Areas in the game world*
+* `Story` - *Manages narrative and progression*
+* `Action` - *Possible activities in game*
+* `GameState` - *Tracks game progress and state*
+
+**Attributes by Class**
+* `Game`
+  * *player*: Main player entity
+  * *story*: Current story
+  * *currentState*: Active game state
+  * *isRunning*: Game activity status
+
+* `Entity`
+  * *name*: Entity identifier
+  * *health*: Current health points
+  * *maxHealth*: Maximum possible health
+  * *currentLocation*: Current position
+  * *isActive*: Activity status
+
+* `Player` (extends Entity)
+  * *inventory*: Carried items
+  * *maxInventorySize*: Inventory capacity limit
+  * *(inherits Entity attributes)*
+
+* `Item`
+  * *name*: Item identifier
+  * *description*: Item details
+  * *type*: ItemType value
+  * *isCollectable*: Pickup status
+  * *isUsable*: Usage status
+  * *currentLocation*: Item position
+
+* `Location`
+  * *name*: Location identifier
+  * *description*: Location details
+  * *entities*: Present entities
+  * *items*: Present items
+  * *connectedLocations*: Linked locations
+  * *isLocked*: Access status
+  * *requiredKey*: Key item for unlocking
+
+* `Story`
+  * *title*: Story name
+  * *introduction*: Opening narrative
+  * *storyParts*: Story segments
+  * *locations*: Available areas
+  * *entities*: Present entities
+  * *items*: Available items
+  * *dialogues*: Conversation map
+  * *availableActions*: Possible actions
+  * *endings*: Possible conclusions
+  * *currentPartIndex*: Story progress
+
+* `Action`
+  * *name*: Action identifier
+  * *description*: Action details
+  * *type*: ActionType value
+  * *outcome*: Result description
+  * *requirements*: Required conditions
+  * *source*: Acting entity
+  * *target*: Target entity
+  * *itemUsed*: Required item
+
+* `GameState`
+  * *name*: State identifier
+  * *description*: State description
+  * *availableActions*: Current actions
+  * *currentPart*: Active story segment
+  * *flags*: State condition map
+
+**Enumerations**
+* `ItemType`
+  * *KEY*: For unlocking
+  * *WEAPON*: For combat
+  * *CONSUMABLE*: Single-use
+  * *QUEST_ITEM*: Story-related
+
+* `ActionType`
+  * *MOVEMENT*: Location changes
+  * *INTERACTION*: Entity/object interaction
+  * *USE_ITEM*: Item usage
+  * *DIALOGUE*: Conversations
+  * *COMBAT*: Fighting actions
+
+**Key Methods by Class**
+* `Game`
+  * *initializeGame()*: Start setup
+  * *processAction()*: Handle actions
+  * *updateGameState()*: Update state
+  * *endGame()*: Conclude game
+
+* `Entity`
+  * *move()*: Change location
+  * *interact()*: Entity interaction
+  * *getStatus()*: Status check
+  * *takeDamage()*: Process damage
+  * *heal()*: Recover health
+  * *setLocation()*: Update position
+
+* `Player`
+  * *addItem()*: Add to inventory
+  * *removeItem()*: Remove from inventory
+  * *useItem()*: Use item
+  * *getInventoryStatus()*: Check inventory
+  * *canCarryItem()*: Check capacity
+
+* `Item`
+  * *use()*: Use item
+  * *examine()*: Get details
+  * *getInfo()*: Basic info
+  * *setLocation()*: Update position
+  * *onCollect()*: Collection behavior
+  * *onUse()*: Usage behavior
+
+* `Location`
+  * *addEntity()*: Add entity
+  * *removeEntity()*: Remove entity
+  * *addItem()*: Add item
+  * *removeItem()*: Remove item
+  * *getAvailableItems()*: List items
+  * *getConnectedLocations()*: List connections
+  * *canEnter()*: Check access
+  * *unlock()*: Process unlocking
+
+* `Story`
+  * *progressStory()*: Advance story
+  * *getCurrentPart()*: Current segment
+  * *getAvailableActions()*: List actions
+  * *addStoryPart()*: Add segment
+  * *checkTriggers()*: Check conditions
+  * *getEnding()*: Get conclusion
+
+* `Action`
+  * *execute()*: Perform action
+  * *checkRequirements()*: Validate conditions
+  * *getDescription()*: Action details
+  * *isAvailable()*: Check availability
+
+* `GameState`
+  * *updateState()*: Update state
+  * *getAvailableActions()*: List actions
+  * *getCurrentStatus()*: Get status
+  * *setFlag()*: Set condition
+  * *checkFlag()*: Check condition
+
+**Key Relationships**
+* Game contains one Player, Story, and GameState
+* Player extends Entity
+* Location contains multiple Entities and Items
+* Locations connect to other Locations
+* Story contains multiple Locations and Actions
+* GameState tracks multiple Actions
+* Items have one ItemType
+* Actions have one ActionType
+* Player carries multiple Items
+* Entities and Items are in one Location
+
+![Class Diagram](./assets/classDiagram.svg)
+
+- [ ] All classes should implement appropriate error handling for invalid operations
+- [ ] State changes should be monitored using an observer pattern
+- [ ] Each class should maintain single responsibility principle
+- [ ] Proper access modifiers should be used to ensure encapsulation
+- [ ] Critical operations should include validation
+- [ ] Consider adding a save/load system for game state persistence
+- [ ] Implement proper cleanup for unused resources
+- [ ] Add logging for debugging
+- [ ] Consider adding a quest/objective tracking system
+- [ ] Plan for future extensibility of item and action types
 
 ### Flowchart Diagram
 
